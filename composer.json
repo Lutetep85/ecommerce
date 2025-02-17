@@ -1,0 +1,24 @@
+{
+	"name": "lutetep85/ecommerce",
+	"authors": 
+	[
+		{
+			"name": "Moisés Lutete Panzo",
+			"email": "haodooclientgest@gmail.com"
+		}
+
+	],
+	"require":
+	{
+		"phpmailer/phpmailer": "6.9.2",
+		"slim/slim": "^4.0",
+		"rain/raintpl": "3.0.0"
+	},
+	"autoload":
+	{
+		"psr-4":
+		{
+			"": "vendor\\gesth\\php-classes\\src"
+		}
+	}
+}
