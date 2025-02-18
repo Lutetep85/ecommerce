@@ -8,7 +8,11 @@
 
 	$app->get('/', function()
 	{
-		echo "Ok";
+		$sql = new gesth\DB\Banco();
+
+        $results = $sql->select("SELECT * FROM tb_Users");
+
+        echo json_encode($results);
 	});
 
 	$app->run();

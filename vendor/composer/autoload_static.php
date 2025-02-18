@@ -6,67 +6,36 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitfccca572ae449b3954c9090706e09c33
 {
-    public static $files = array (
-        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
-        'S' => 
+        'g' => 
         array (
-            'Slim\\' => 5,
+            'gesth\\' => 6,
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 8,
-            'Psr\\Http\\Server\\' => 16,
-            'Psr\\Http\\Message\\' => 17,
-            'Psr\\Container\\' => 14,
             'PHPMailer\\PHPMailer\\' => 20,
-        ),
-        'F' => 
-        array (
-            'FastRoute\\' => 10,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Slim\\' => 
+        'gesth\\' => 
         array (
-            0 => __DIR__ . '/..' . '/slim/slim/Slim',
-        ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/src',
-        ),
-        'Psr\\Http\\Server\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-server-middleware/src',
-            1 => __DIR__ . '/..' . '/psr/http-server-handler/src',
-        ),
-        'Psr\\Http\\Message\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
-        ),
-        'Psr\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/container/src',
+            0 => __DIR__ . '/..' . '/gesth/php-classes/src',
         ),
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
-        'FastRoute\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/nikic/fast-route/src',
-        ),
-    );
-
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/..' . '/gesth/php-classes/src',
     );
 
     public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'Slim' => 
+            array (
+                0 => __DIR__ . '/..' . '/slim/slim',
+            ),
+        ),
         'R' => 
         array (
             'Rain' => 
@@ -85,7 +54,6 @@ class ComposerStaticInitfccca572ae449b3954c9090706e09c33
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitfccca572ae449b3954c9090706e09c33::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitfccca572ae449b3954c9090706e09c33::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInitfccca572ae449b3954c9090706e09c33::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitfccca572ae449b3954c9090706e09c33::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitfccca572ae449b3954c9090706e09c33::$classMap;
 

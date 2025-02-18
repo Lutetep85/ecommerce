@@ -11,14 +11,14 @@
 	"require":
 	{
 		"phpmailer/phpmailer": "6.9.2",
-		"slim/slim": "^4.0",
-		"rain/raintpl": "3.0.0"
+		"rain/raintpl": "3.0.0",
+		"slim/slim": "^2.6"
 	},
 	"autoload":
 	{
 		"psr-4":
 		{
-			"": "vendor\\gesth\\php-classes\\src"
+			"gesth\\": "vendor\\gesth\\php-classes\\src"
 		}
 	}
 }
