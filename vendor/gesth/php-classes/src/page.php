@@ -14,17 +14,17 @@
 			"data"=>[] 
 		];
 
-		public function __construct($opts = array())
+		public function __construct($opts = array(), $tpl_dir = "/../../../../views/")
 		{
 			$this->options = array_merge($this->defaults, $opts);
 
 			$config = array(
-					"tpl_dir"       => /*$_SERVER["DOCUMENT_ROOT"]*/__DIR__."/../../../../views/",
+					"tpl_dir"       => /*$_SERVER["DOCUMENT_ROOT"]*/__DIR__.$tpl_dir,
 					"cache_dir"     => /*$_SERVER["DOCUMENT_ROOT"]*/__DIR__."/../../../../views-cache/",
-					"debug"         => false // set to false to improve the speed
+					"debug"         => true // set to false to improve the speed
 				   );
                         
-                        /*echo "Caminho dos templates:" . $config["tpl_dir"] . "<br>";
+                       /* echo "Caminho dos templates:" . $config["tpl_dir"] . "<br>";
                         echo "Camindo dos Caches:" . $config["cache_dir"] . "<br>";*/
 			Tpl::configure($config);
 
