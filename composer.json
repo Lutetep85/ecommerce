@@ -12,7 +12,8 @@
 	{
 		"phpmailer/phpmailer": "6.9.2",
 		"rain/raintpl": "^3.1",
-		"slim/slim": "^2.6"
+		"slim/slim": "^4.0",
+		"slim/psr7": "^1.7"
 	},
 	"autoload":
 	{

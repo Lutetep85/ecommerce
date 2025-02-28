@@ -11,17 +11,20 @@
 		private $tpl;
 		private $options = [];
 		private $defaults = [
+			"header"=>true,
+			"footer"=>true,
 			"data"=>[] 
 		];
 
 		public function __construct($opts = array(), $tpl_dir = "/../../../../views/")
 		{
+			//$this->defaults["data"]["session"] = $_SESSION;
 			$this->options = array_merge($this->defaults, $opts);
 
 			$config = array(
-					"tpl_dir"       => /*$_SERVER["DOCUMENT_ROOT"]*/__DIR__.$tpl_dir,
-					"cache_dir"     => /*$_SERVER["DOCUMENT_ROOT"]*/__DIR__."/../../../../views-cache/",
-					"debug"         => true // set to false to improve the speed
+					"tpl_dir"       =>__DIR__.$tpl_dir,
+					"cache_dir"     =>__DIR__."/../../../../views-cache/",
+					"debug"         => false // set to false to improve the speed
 				   );
                         
                        /* echo "Caminho dos templates:" . $config["tpl_dir"] . "<br>";
@@ -32,7 +35,7 @@
 
 			$this->setData($this->options["data"]); 
 
-			$this->tpl->draw("header");
+			if ($this->options["header"] === true) $this->tpl->draw("header");
 		}
 
 
@@ -54,7 +57,7 @@
 		public function __destruct()
 
 		{
-			$this->tpl->draw("footer");
+			if ($this->options["footer"] === true) $this->tpl->draw("footer");
 
 		}
 	}
