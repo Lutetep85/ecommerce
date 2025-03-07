@@ -66,7 +66,61 @@ $app->map(['GET', 'POST'], '/admin/logout', function($request, $response, $args)
     return $response->withheader('Location', '/ecommerce/admin/login')->withStatus(302);
 });
 
+$app->get('/admin/users', function ($request, $response, $args) {
+   
+    user::verifyLogin();
 
+    $page = new PageAdmin();
+
+    $page->setTpl("users");
+    return $response;
+});
+
+$app->get('/admin/users/create', function ($request, $response, $args) {
+   
+    user::verifyLogin();
+   
+    $page = new PageAdmin();
+
+    $page->setTpl("users-create");
+    return $response;
+});
+
+$app->get('/admin/users/{iduser}', function ($request, $response, $args) {
+   
+    user::verifyLogin();
+
+    $iduser = args['iduser'];
+   
+    $page = new PageAdmin();
+
+    $page->setTpl("users");
+    return $response;
+});
+
+$app->post("/admin/users/create", function($request, $response, $args) {
+
+    user::verifyLogin();
+});
+
+$app->post("/admin/users/{iduser}", function($request, $response, $args) {
+
+    user::verifyLogin();
+
+     $iduser = args['iduser'];
+});
+
+$app->delete("/admin/users/{iduser}", function($request, $response, $args) {
+
+    user::verifyLogin();
+
+     $iduser = args['iduser'];
+});
+
+
+//foreach ($app->getRouteCollector()->getRoutes() as $route) {
+//    echo $route->getPattern() . "<br>";
+//}
 
 // Executa a aplicação
 $app->run();

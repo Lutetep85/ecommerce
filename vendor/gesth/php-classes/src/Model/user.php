@@ -29,7 +29,7 @@ class User extends Model
 		//echo "Senha digitada: " . $password . "<br>";
     	//echo "Senha armazenada: " . $data["despassword"] . "<br>";
 
-		if ($password === $data["despassword"])
+		if (hash('sha256', $password) === $data["despassword"])
 		{
 			$user = new User();
 
